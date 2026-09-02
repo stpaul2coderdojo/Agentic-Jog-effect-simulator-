@@ -230,6 +230,29 @@ export const ReportModal: React.FC<ReportModalProps> = ({
                   Evaluating likelihood over accumulated observations yields a 68% Bayesian Credible Interval of [{inference?.credibleInterval68[0]?.toExponential(2)} eV, {inference?.credibleInterval68[1]?.toExponential(2)} eV] and reduced $\chi^2 / \text&#123;dof&#125; = {inference?.reducedChiSquared.toFixed(2) || '1.05'}$.
                 </p>
               </div>
+
+              {/* Section 4: Primary Theoretical Reference & Preprint */}
+              <div className="space-y-3 pt-4 border-t border-white/10">
+                <h2 className="text-sm font-semibold text-white border-l-2 border-cyan-500 pl-2 uppercase font-mono">
+                  IV. Primary Theoretical Reference & Preprint
+                </h2>
+                <div className="p-3.5 bg-[#0c0c0e] rounded border border-white/10 space-y-2 text-xs">
+                  <div className="text-slate-200 font-serif leading-relaxed">
+                    <strong>Primary Citation:</strong> {AUTHOR_INFO.primaryPreprint.citation}
+                  </div>
+                  <div className="flex items-center gap-2 pt-1 flex-wrap">
+                    <span className="text-[10px] font-mono text-slate-400 uppercase">Preprint DOI:</span>
+                    <a
+                      href={AUTHOR_INFO.primaryPreprint.doiUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[11px] font-mono text-blue-400 hover:text-blue-300 underline flex items-center gap-1"
+                    >
+                      <span>{AUTHOR_INFO.primaryPreprint.doiUrl}</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           ) : viewTab === 'raw_latex' ? (
             <pre className="p-4 bg-[#111114] border border-white/10 rounded-lg font-mono text-xs text-emerald-300 leading-relaxed whitespace-pre-wrap overflow-x-auto selection:bg-emerald-950">

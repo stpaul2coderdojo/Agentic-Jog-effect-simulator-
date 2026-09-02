@@ -99,9 +99,24 @@ npm start
 
 ## Citation & Attribution
 
-If using this framework in academic publications, please cite:
+### Foundational Theoretical Preprint
+```text
+Dr Bheemaiah, A. K. ‘The Jog Effect’. Preprint, Zenodo, 2 September 2026. https://doi.org/10.5281/zenodo.22250680.
+```
 
+### BibTeX
 ```bibtex
+@article{Bheemaiah2026Jog,
+  author    = {Dr. Bheemaiah, A. K.},
+  title     = {The Jog Effect},
+  journal   = {Preprint, Zenodo},
+  year      = {2026},
+  month     = {September},
+  day       = {2},
+  doi       = {10.5281/zenodo.22250680},
+  url       = {https://doi.org/10.5281/zenodo.22250680}
+}
+
 @article{Kumar2026SPDE,
   author    = {Dr. Bheemaiah Anil Kumar},
   title     = {Stochastic Partial Differential Equation (SPDE) Modeling for Dark Matter Mass Inference via Quantum Holographic Storage Error Signatures},

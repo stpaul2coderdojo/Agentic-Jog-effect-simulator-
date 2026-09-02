@@ -133,7 +133,31 @@ The application includes an automated RevTeX4 LaTeX compiler that generates:
 
 ---
 
-## 8. Authorship & Copyright
+## 8. Primary Theoretical Reference & Preprint
+
+The theoretical mechanisms linking macroscopic quantum error rates and topological field couplings build upon the foundational work:
+
+- **Citation:** Dr Bheemaiah, A. K. ‘The Jog Effect’. Preprint, Zenodo, 2 September 2026. [https://doi.org/10.5281/zenodo.22250680](https://doi.org/10.5281/zenodo.22250680).
+- **DOI:** `10.5281/zenodo.22250680`
+- **Publication Date:** 2 September 2026
+- **Repository:** Zenodo Open Science Repository
+
+```bibtex
+@article{Bheemaiah2026Jog,
+  author    = {Dr. Bheemaiah, A. K.},
+  title     = {The Jog Effect},
+  journal   = {Preprint, Zenodo},
+  year      = {2026},
+  month     = {September},
+  day       = {2},
+  doi       = {10.5281/zenodo.22250680},
+  url       = {https://doi.org/10.5281/zenodo.22250680}
+}
+```
+
+---
+
+## 9. Authorship & Copyright
 
 - **Principal Investigator:** Dr. Bheemaiah Anil Kumar
 - **Affiliation:** Synergy Robotics Seattle

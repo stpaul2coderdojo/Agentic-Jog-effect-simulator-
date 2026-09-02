@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { SPDEParameters } from '../types';
-import { BookOpen, ChevronDown, ChevronUp, Layers, Activity, Variable, Target, Calculator, CheckCircle } from 'lucide-react';
+import { AUTHOR_INFO } from '../physics/constants';
+import { BookOpen, ChevronDown, ChevronUp, Layers, Activity, Variable, Target, Calculator, CheckCircle, ExternalLink } from 'lucide-react';
 
 interface ModelEquationsPanelProps {
   params: SPDEParameters;
@@ -151,6 +152,27 @@ export const ModelEquationsPanel: React.FC<ModelEquationsPanelProps> = ({
                 <div className="px-3 py-2 rounded bg-[#0c0c0e] border border-white/5 flex items-center justify-between text-xs font-mono text-slate-300 flex-wrap gap-2">
                   <span className="text-slate-500 text-[10px] uppercase font-mono">Live Simulation Parameters:</span>
                   <span className="text-blue-400 font-semibold">{current.highlight}</span>
+                </div>
+
+                {/* Foundational Preprint Citation Card */}
+                <div className="p-3 rounded bg-[#0c0c0e] border border-blue-500/20 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+                  <div className="space-y-0.5">
+                    <span className="text-[9px] font-mono uppercase tracking-wider text-blue-400 font-semibold">
+                      Theoretical Foundation & Preprint
+                    </span>
+                    <p className="text-[11px] text-slate-300 font-serif leading-snug">
+                      {AUTHOR_INFO.primaryPreprint.citation}
+                    </p>
+                  </div>
+                  <a
+                    href={AUTHOR_INFO.primaryPreprint.doiUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-2.5 py-1 text-[10px] font-mono uppercase rounded bg-blue-600/20 text-blue-400 hover:bg-blue-600/30 border border-blue-500/40 transition flex items-center gap-1 flex-shrink-0 self-start sm:self-center"
+                  >
+                    <span>View on Zenodo</span>
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
                 </div>
               </div>
             );

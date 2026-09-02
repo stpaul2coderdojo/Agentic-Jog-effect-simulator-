@@ -172,7 +172,7 @@ app.post("/api/agent/generate-report", async (req, res) => {
 
     if (!ai) {
       const sampleLatex = `\\documentclass[twocolumn,10pt,aps,prd,superscriptaddress]{revtex4-2}
-\\usepackage{amsmath,amssymb,graphicx,bm}
+\\usepackage{amsmath,amssymb,graphicx,bm,hyperref}
 
 \\title{Stochastic Partial Differential Equation (SPDE) Modeling for Dark Matter Mass Inference via Quantum Holographic Storage Error Signatures}
 \\author{${author}}
@@ -180,13 +180,13 @@ app.post("/api/agent/generate-report", async (req, res) => {
 \\date{\\today}
 
 \\begin{abstract}
-We demonstrate a novel quantum-stochastic framework using Google Quantum Cloud functions and holographic storage registers to infer dark matter mass $m_d$. By mapping space-time quantum error rates $e(x,t) = g(u(x,t), m_d)$ onto an underlying non-linear SPDE $\\partial_t u = D \\nabla^2 u - \\lambda u + \\alpha(m_d) \\Phi_{\\text{DM}} + \\beta \\dot{W}$, we perform Bayesian inference over observable syndromes. For candidate ${context?.candidateName || 'Ultralight Axion'}, we extract an inferred mass $m_d \\approx ${context?.inferredMassDisplay || '10^{-21}\\text{ eV}'}$ with Bayes factor $B_{10} = ${context?.bayesFactor || '14.2'}$.
+We demonstrate a novel quantum-stochastic framework using Google Quantum Cloud functions and holographic storage registers to infer dark matter mass $m_d$. By mapping space-time quantum error rates $e(x,t) = g(u(x,t), m_d)$ onto an underlying non-linear SPDE $\\partial_t u = D \\nabla^2 u - \\lambda u + \\alpha(m_d) \\Phi_{\\text{DM}} + \\beta \\dot{W}$ building upon the foundational physical mechanics described in \\cite{Bheemaiah2026Jog}, we perform Bayesian inference over observable syndromes. For candidate ${context?.candidateName || 'Ultralight Axion'}, we extract an inferred mass $m_d \\approx ${context?.inferredMassDisplay || '10^{-21}\\text{ eV}'}$ with Bayes factor $B_{10} = ${context?.bayesFactor || '14.2'}$.
 \\end{abstract}
 
 \\maketitle
 
 \\section{Introduction}
-Dark matter detection in laboratory quantum architectures requires formalizing non-gravitational and topological field interactions...
+Dark matter detection in laboratory quantum architectures requires formalizing non-gravitational and topological field interactions, expanding upon theoretical frameworks including the Jog Effect \\cite{Bheemaiah2026Jog}...
 
 \\section{SPDE Dynamics}
 \\begin{equation}
@@ -205,6 +205,11 @@ P(m_d \\mid e(x,t)) \\propto P(e(x,t) \\mid m_d) P(m_d)
 
 \\section{Results \\& Discussion}
 Fitted SPDE parameters: $\\lambda = ${context?.damping_lambda}$, $\\alpha = ${context?.coupling_alpha}$, $\\beta = ${context?.noise_beta}$. Mean storage fidelity $\\mathcal{F} = ${((context?.quantumFidelity || 0.98) * 100).toFixed(2)}\\%$.
+
+\\begin{thebibliography}{99}
+\\bibitem{Bheemaiah2026Jog}
+Dr Bheemaiah, A.~K., \\emph{The Jog Effect}, Preprint, Zenodo (2 September 2026), \\url{https://doi.org/10.5281/zenodo.22250680}.
+\\end{thebibliography}
 `;
       return res.json({ latex: sampleLatex });
     }
@@ -219,8 +224,9 @@ Context data:
 - Damping λ: ${context?.damping_lambda}, Diffusion D: ${context?.diffusion_D}, Coupling α: ${context?.coupling_alpha}, Noise β: ${context?.noise_beta}
 - Observed QBER: ${((context?.meanErrorRate || 0.02) * 100).toFixed(3)}%, Fidelity: ${((context?.quantumFidelity || 0.98) * 100).toFixed(2)}%
 - Bayes Factor: ${context?.bayesFactor}
+- Mandatory Theoretical Reference: Dr Bheemaiah, A. K. ‘The Jog Effect’. Preprint, Zenodo, 2 September 2026. https://doi.org/10.5281/zenodo.22250680.
 
-Include complete Abstract, Equations for SPDE, Error Coupling g(u, m_d), Bayesian Posterior formulation, and Experimental Conclusions. Output raw LaTeX code only.`;
+Include complete Abstract, Equations for SPDE, Error Coupling g(u, m_d), Bayesian Posterior formulation, Experimental Conclusions, and a thebibliography environment referencing \\bibitem{Bheemaiah2026Jog} Dr Bheemaiah, A. K. 'The Jog Effect'. Output raw LaTeX code only.`;
 
     const response = await ai.models.generateContent({
       model: "gemini-3.7-flash",

@@ -11,7 +11,16 @@ export const AUTHOR_INFO = {
   title: "Principal Quantum AI Scientist & SPDE Theorist",
   contact: "bheemaiah@alumni.iitm.ac.in",
   researchTitle: "Stochastic Partial Differential Equation (SPDE) Framework for Dark Matter Mass Inference via Quantum Holographic Storage Error Signatures",
-  version: "v3.8.4-QuantumCloud"
+  version: "v3.8.4-QuantumCloud",
+  primaryPreprint: {
+    citation: "Dr Bheemaiah, A. K. ‘The Jog Effect’. Preprint, Zenodo, 2 September 2026. https://doi.org/10.5281/zenodo.22250680.",
+    title: "The Jog Effect",
+    author: "Dr Bheemaiah, A. K.",
+    publisher: "Zenodo",
+    date: "2 September 2026",
+    doi: "10.5281/zenodo.22250680",
+    doiUrl: "https://doi.org/10.5281/zenodo.22250680"
+  }
 };
 
 export const DM_CANDIDATES: DarkMatterCandidate[] = [
