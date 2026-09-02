@@ -1,0 +1,6 @@
+{
+  "name": "Quantum Holographic SPDE Dark Matter Inference",
+  "description": "Agentic quantum holographic storage simulator and SPDE dark matter mass inference framework by Dr. Bheemaiah Anil Kumar (Synergy Robotics Seattle).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
